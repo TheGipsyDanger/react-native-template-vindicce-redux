@@ -31,6 +31,11 @@ function hooksExists(comp) {
   return allHooks.indexOf(`${comp}`) >= 0;
 }
 
+function reduxExists(comp) {
+  const allHooks = fs.readdirSync('src/redux/reducers');
+  return allHooks.indexOf(`${comp}`) >= 0;
+}
+
 function factoryExists(comp) {
   const allHooks = fs.readdirSync('src/utils/hooks');
   return allHooks.indexOf(`${comp}`) >= 0;
@@ -61,5 +66,6 @@ module.exports = {
   navigatorExistsForViews,
   hooksExists,
   factoryExists,
+  reduxExists,
   interfaceExists,
 };
